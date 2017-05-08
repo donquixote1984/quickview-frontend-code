@@ -1,0 +1,144 @@
+@import "../../../../base/base.scss";
+.quick-view-quantity-info {
+  position:relative;
+  padding-top:16px;
+  border-top:1px solid #eee;
+
+  .quick-view-quantity-info-form {
+    display:table;
+    width:auto;
+    position:relative;
+    border:1px solid #ccc;
+    .quick-view-quantity-info-control {
+      display:table-cell;
+      vertical-align:top;
+    }
+
+    .quick-view-quantity-info-input {
+      display: table-cell;
+      vertical-align: top;
+      text-align:center;
+      line-height:25px;
+      font-weight:bold;
+      font-size:18px;
+      width:60px; /**ie8*/
+      float:left;
+    }
+
+    .quick-view-quantity-info-control {
+      button {
+        background:transparent;
+        outline:none;
+        position:relative;
+        height:20px;
+        width:20px;
+        display:block;
+        border:0 none;
+        font-size:0;
+        line-height:0;
+        right:0;
+        &:first-child {
+          border-bottom:1px solid #ccc;
+        }
+      }
+
+
+      .quick-view-quantity-btn {
+        position:relative;
+        &:after{
+          display:block;
+          content:'';
+          position:absolute;
+          background-image:url($quick-view-asset-sprite);
+          height:4px;
+          top:50%;
+          left:50%;
+          margin-left:-4px;
+          margin-top:-2px;
+          width:8px;
+          height:4px;
+
+          .lt-ie9 &{
+            margin-top:-9px;
+          }
+        }
+      }
+      .quick-view-quantity-btn-plus{
+        &:after {
+          background-position: -378px -189px;
+        }
+        &[disabled]{
+          &:after {
+            background-position: -390px -189px;
+          }
+        }
+
+      }
+      .quick-view-quantity-btn-minus {
+        &:after {
+          background-position:-378px -197px;
+        }
+        &[disabled] {
+          &:after {
+            background-position:-390px -197px;
+          }
+        }
+      }
+
+
+    }
+
+    .quick-view-quantity-info-input {
+      width: 60px;
+      height:40px;
+      border:0 none;
+      border-right: 1px solid #eee;
+
+      padding: 10px 0 9px 0;
+
+    }
+  }
+
+  .quick-view-soldout-tooltip {
+    position: absolute;
+    display:none;
+    right: -80px;
+    bottom: 42px;
+    padding:12px 20px;
+    text-align:center;
+    background: url($quick-view-asset-sprite) no-repeat -217px -120px;
+    width: 241px;
+    height: 50px;
+    z-index: 3;
+    color:#ae0000;
+  }
+
+  .quick-view-total-price {
+    display:inline-block;
+    vertical-align:top;
+    float:right;
+  }
+  .quick-view-quantity-left {
+    display:inline-block;
+    vertical-align: top;
+    width:80px;
+  }
+
+  .quick-view-major-price {
+    font-weight:bold;
+    font-size:20px;
+    color:#ae0000;
+    padding:10px 0 0 0;
+    font-family:'Tahoma';
+
+      .coupon-title {
+        font-size:12px;
+        margin-bottom:3px;
+        margin-top:-10px;
+        text-align:right;
+        font-weight:normal;
+      }
+  }
+
+
+}

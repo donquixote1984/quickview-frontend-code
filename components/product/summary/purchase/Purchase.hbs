@@ -1,0 +1,47 @@
+{{#unless soldOut}}
+<div class="quick-view-purchase">
+    <div class="quick-view-order">
+        <div class="quick-view-oos-overlay" {{#unless valid}}style='display:block;'{{/unless}}></div>
+        <ul>
+        {{#unless hideCart}}
+            <li>
+                <a class="quick-view-purchase-btn quick-view-atc-btn">
+                    <span class="prod-cart-btn__txt">장바구니 담기</span>
+                </a>
+            </li>
+        {{/unless}}
+            <li>
+                <a class="quick-view-purchase-btn quick-view-buy-btn">
+                    <span class="prod-buy-btn__txt">바로구매</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="quick-view-purchase-popup">
+        <h4>상품이 장바구니에 담겼습니다.</h4>
+        <a href="{{cartUrl}}">장바구니 바로가기 &gt;</a>
+        <button class="quick-view-purchase-popup-close"></button>
+    </div>
+
+
+    {{!--
+
+
+     <div class="prod-order__notifier">
+            <div class="prod-order__notifier__layer" style="display: none;">
+                <div class="prod-order__notifier__layer__img"></div>
+                <a href="#" class="prod-order__notifier__close">닫기</a>
+                <p class="prod-order__notifier__content">상품이 장바구니에 담겼습니다.</p>
+                <div class="prod-order__notifier__btns">
+                    <div class="prod-order__notifier__">
+                        장바구니 바로가기 &gt;
+                        <a href="{{default headerUrls.cartView.link}}">장바구니 바로가기 &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    --}}
+</div>
+{{/unless}}

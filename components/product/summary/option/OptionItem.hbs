@@ -1,0 +1,61 @@
+{{#if available}}
+<div class="quick-view-option-item-container">
+    <span class="quick-view-option-label {{#if multiple}}multiple{{else}}single{{/if}}">{{label}}{{#xif totalCount '>' 1}}({{totalCount}}){{/xif}}</span>
+    <div class="quick-view-option-item {{#if multiple}}multiple{{else}}single{{/if}}">
+
+        <!--selected option display-->
+        <component name="./product/summary/option/SelectedOption" data="selectedOption" bind></component>
+
+        <!--hidden option dropdown list-->
+        {{#if multiple}}
+        <ul class="quick-view-option-dropdown">
+            {{#each optionItems}}
+                <li class="quick-view-option-dropdown-item {{#if selected}}selected{{/if}} {{#if soldOut}}soldout{{/if}}"  data-index="{{@index}}" data-option-id="{{optionId}}">
+
+                    {{!--option title--}}
+                    <div class="quick-view-option-dropdown-item-title quick-view-txt-bold depends-on-soldout">{{title}}</div>
+                    {{!--option title end--}}
+
+                    {{!--main option content--}}
+                    {{#if salesPrice}}
+                    <div class="quick-view-option-price">
+                        <span class="quick-view-option-dropdown-item-saleprice quick-view-txt-bold quick-view-txt-red depends-on-soldout">{{formattedSalePrice}}원</span>
+
+                        {{#if unitPrice}}
+                            <span class="quick-view-option-dropdown-item-unitprice quick-view-txt-red depends-on-soldout">({{unitPrice}})</span>
+                        {{/if}}
+
+                        {{#if logistics}}
+                            <span class="quick-view-inline-block delivery-badge delivery-badge-logistic depends-on-soldout">
+                                <img src="{{badgeUrl}}" style="width: auto; height: 14px;" />
+                            </span>
+                        {{/if}}
+                        {{#if coupangGlobal}}
+                            <span class="quick-view-inline-block delivery-badge delivery-badge-global depends-on-soldout">
+                                <img src="{{badgeUrl}}" style="width: auto; height: 14px;" />
+                            </span>
+                        {{/if}}
+                    </div>
+                    {{/if}}
+                    {{!--main option content end--}}
+
+                    {{!--soldout or impend sold out--}}
+                    {{#if soldOut}}
+                        <div style='margin-top:3px;font-size:12px' class="quick-view-txt-red">일시품절</div>
+                    {{else}}
+                        {{#if impendSoldOut}}
+                            <div style='margin-top:3px;font-size:12px' class="quick-view-txt-red">
+                                매진임박({{remainCount}}개)
+                            </div>
+                        {{/if}}
+                    {{/if}}
+                    {{!--oos aos end--}}
+
+                </li>
+            {{/each}}
+        </ul>
+        {{/if}}
+    </div>
+
+</div>
+{{/if}}

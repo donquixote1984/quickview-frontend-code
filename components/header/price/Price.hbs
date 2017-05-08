@@ -1,0 +1,61 @@
+<div class="quick-view-header__price {{#if soldOut}}quick-view-soldout{{/if}}">
+
+    <ul class="price-infos {{#if loading}}loading{{/if}}">
+    {{#if hasOriginPrice}}
+        {{!origin price + sale price}}
+
+        <li class="sale-price-wrapper quick-view-txt-red">
+            <span class="sale-price">{{formattedSalePrice}}<span class="price-unit">원</span></span>
+            <span>
+            {{#if unitPrice}}
+                <span class="sale-unit-price">({{unitPrice}})</span>
+            {{/if}}
+            </span>
+        </li>
+
+        <li class="discount-rate quick-view-txt-gray">{{discountRate}}</li>
+        <li class="origin_price quick-view-txt-gray">{{commaFormat originPrice}}원</li>
+
+    {{else if hasCouponPrice}}
+        {{!sale price + coupon price}}
+        <li class="sale-price-wrapper">
+            <span class="sale-price">{{formattedSalePrice}}<span class="price-unit">원</span></span>
+        </li>
+
+        <li class="coupon_price quick-view-txt-red">{{formattedCouponPrice}}원 {{#if couponUnitPrice}}<span style="font-weight:normal">({{couponUnitPrice}})</span>{{/if}} {{couponPriceTitle}}</li>
+
+    {{else}}
+        {{!only sale price}}
+        <li class="sale-price-wrapper quick-view-txt-red noseparator">
+            <span class="sale-price">{{formattedSalePrice}}<span class="price-unit">원</span></span>
+            <span>
+            {{#if unitPrice}}
+                <span class="sale-unit-price">({{unitPrice}})</span>
+            {{/if}}
+            </span>
+        </li>
+
+    {{/if}}
+
+    {{#if logistics}}
+        <li class="delivery-badge">
+            <img src="{{badgeUrl}}" style="width: auto; height:14px;" alt="">
+        </li>
+    {{/if}}
+
+    {{#if coupangGlobal}}
+        <li class="delivery-badge delivery-badge-global">
+            <img src="{{badgeUrl}}" style="width: auto; height:14px;" alt="">
+        </li>
+    {{/if}}
+        {{#if almostSoldOut}}
+            {{#unless soldOut}}
+                <li class="oos-title quick-view-txt-red">매진임박({{inventory}}개)</li>
+            {{/unless}}
+        {{/if}}
+        {{#if soldOut}}
+            <li class="oos-title">일시품절</li>
+        {{/if}}
+    </ul>
+
+</div>

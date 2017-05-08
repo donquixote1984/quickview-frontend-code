@@ -1,0 +1,45 @@
+
+.quick-view-detail-wrapper {
+  height: 100%;
+  height: 100%;
+  max-width: 680px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.quick-view-detail {
+  padding:10px;
+  .quick-view-representive {
+    max-width: 100%;
+  }
+
+  .quick-view-detail-content {
+    margin-top:20px;
+    padding: 10px;
+    img {
+      width: 100% !important;
+    }
+    table {
+      width: 100% !important;
+    }
+  }
+
+
+  .subType-TEXT {
+    line-height: 1.5;
+    word-break: keep-all;
+    letter-spacing: -1px;
+    margin:10px;
+  }
+
+    .quick-view-not-find {
+      position:absolute;
+      top:50%;
+      left:50%;
+      margin-top:-85px;
+      margin-left:-111px;
+      background: url('//imgs.coupangcdn.com/image/dragonstone/sdp/Invalid_info_170103.png');
+      width: 233px;
+      height: 170px;
+    }
+}
+

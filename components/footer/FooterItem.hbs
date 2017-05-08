@@ -1,0 +1,21 @@
+<li class="quick-view-footer-item" data-product-id="{{productId}}">
+    <a href="javascript:void(0)">
+        <img class="quick-view-footer-item-img" src="{{imageUrl}}">
+        <div class="quick-view-footer-item-price">{{salePriceWithTag}}</div>
+    </a>
+    <div class="quick-view-footer-item-tips-wrapper">
+        {{!
+        first wrapper used for position,
+        second wrapper used for a down arrow
+        third wrapper used for text over flow
+        fourth wrapper used for display full height
+        }}
+        <span class="quick-view-footer-item-tips">
+                            <span class="quick-view-footer-item-tips-hidden">
+                                <span class="quick-view-footer-item-tips-ellipsis">
+                                    {{title}}
+                                </span>
+                            </span>
+                        </span>
+    </div>
+</li>

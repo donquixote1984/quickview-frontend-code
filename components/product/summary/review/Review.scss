@@ -1,0 +1,205 @@
+@import "../../../../base/base.scss";
+.quick-view-review {
+  padding:16px 0 10px 0;
+  position:relative;
+  .review-stars {
+    background:url($quick-view-review-bg) no-repeat left top;
+    width: 69px;
+    height:12px;
+    display:inline-block;
+    .review-stars-percentage  {
+      display:inline-block;
+      background-image:url($quick-view-review-percentage);
+      background-repeat:no-repeat;
+      background-position:left -12px;
+      height: 100%;
+
+      *background-position:left -13px;
+      background-position: left -13px\9;
+    }
+
+    @media screen\0 {
+      .review-stars-percentage {
+        background-position: left -13px;
+      }
+    }
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      .review-stars-percentage {
+        background-position: left -13px;
+      }
+    }
+
+
+
+  }
+
+  .review-list-close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    display: block;
+    border: 0 none;
+    background: url($quick-view-asset-sprite) no-repeat -328px -327px;
+    width: 15px;
+    height: 15px;
+
+    &:hover {
+      background-position: -346px -327px;
+    }
+  }
+  .review-list {
+    display:none;
+    position:absolute;
+    background:#fff;
+    border:1px solid #ddd;
+    width: 100%;
+    padding: 24px 0px 16px 16px;
+    z-index:1;
+    top:36px;
+    left:0;
+
+    .jspDrag {
+      background:#ddd;
+    }
+    .jspTrack {
+      background:#fff;
+    }
+
+    .review-list-container {
+      height:356px;
+      /*do not overlap the bottom list*/
+      @media (max-height:900px) {
+        max-height:300px;
+        height:300px;
+      }
+
+      outline:none;
+      max-height: 356px;
+      overflow-y:auto;
+      overflow-x:hidden;
+      max-height:300px\9;
+      height:300px\9;
+    }
+
+    &:before {
+      position:absolute;
+      display: block;
+      content: '';
+      background-image: url($quick-view-asset-sprite);
+      width: 14px;
+      height: 8px;
+      background-position: -390px -327px;
+      left: 70px;
+      *left: 72px;
+      left:72px\9;
+      top: -8px;
+    }
+    &.loading {
+      height: 90px;
+
+      li {
+        display:none;
+      }
+      &:after{
+        display: block;
+        position: absolute;
+        content: '';
+        width: 24px;
+        margin-left:-12px;
+        height: 24px;
+        left: 50%;
+        top: 30px;
+        background: url("http://imgs.coupangcdn.com/image/coupang/product/product-detail-loading.gif") no-repeat;
+      }
+    }
+    li {
+      article {
+        padding-top:10px;
+        border-top:1px solid #ddd;
+      }
+      &:first-child {
+        article {
+          border-top: 0 none;
+        }
+      }
+    }
+    .review-item-title {
+      margin-bottom:10px;
+    }
+    .review-item-header {
+      color:#888;
+      margin-bottom:4px;
+    }
+    .review-item-name {
+      color:#888;
+    }
+
+    /** text-overflow:ellipsis magic */
+    .review-item-content {
+      line-height:1.5;
+      overflow:hidden;
+      max-height:4.5em;
+      position:relative;
+      margin:5px 5px 10px 0;
+    }
+
+
+
+    /**margic ends!*/
+  }
+
+
+  @media screen\0 {
+    .review-list:before {
+      left: 72px;
+    }
+  }
+
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .review-list:before {
+      left: 72px;
+    }
+  }
+
+  .review-go-to-sdp {
+    padding: 10px;
+    display: block;
+    margin: 20px 7px 0 0;
+    border: 1px solid #0073e9;
+    color: #0073e9;
+    &:hover {
+      color:#fff;
+      background:#0073e9;
+    }
+  }
+  .review-logs {
+    display:inline-block;
+    color:#0073e9;
+    &:before {
+      display:inline-block;
+      content:'';
+      background-image:url($quick-view-asset-sprite) ;
+      background-repeat:no-repeat;
+      background-position:-363px -336px;
+
+      width: 10px;
+      height: 5px;
+      margin:0 3px 2px 3px;
+    }
+    &.collapse {
+      &:before {
+        display:inline-block;
+        content:'';
+        background-image:url($quick-view-asset-sprite);
+        background-repeat:no-repeat;
+        background-position: -363px -327px;
+        width: 10px;
+        height: 5px;
+        margin:0 3px 2px 3px;
+      }
+    }
+
+  }
+
+  border-bottom:1px solid #eee;
+}

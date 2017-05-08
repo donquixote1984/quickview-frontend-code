@@ -1,0 +1,110 @@
+@import "../../../base/base.scss";
+.quick-view-soldout {
+  color:#888 !important;
+  li {
+    color:#888 !important;
+    &.oos-title {
+      color:#ae0000 !important;
+      font-weight:bold;
+    }
+  }
+}
+.quick-view-header-price {
+
+  .price-infos {
+    position:relative;
+    font-family: Tahoma;
+    font-size:14px;
+    &.loading{
+      margin-left:20px;
+      &:before {
+        display: block;
+        position:absolute;
+        content: '';
+        width: 24px;
+        height: 24px;
+        left:-30px;
+        top:-2px;
+        background:url('http://imgs.coupangcdn.com/image/coupang/product/product-detail-loading.gif') no-repeat;
+      }
+    }
+
+    .origin_price {
+      text-decoration: line-through;
+    }
+    .noseparator{
+      &:after{
+        display:none !important;
+      }
+    }
+    li {
+      display: inline-block;
+    }
+
+    .price-unit {
+      font-size:14px;
+    }
+
+    .delivery-badge {
+      top:3px;
+    }
+
+    .discount-rate {
+      color:#111;
+    }
+    .sale-price-wrapper {
+      marign-right:5px;
+
+      &:after {
+        display: inline-block;
+        position: relative;
+        content: '';
+        border-right: 1px solid #ddd;
+        top: 2px;
+        margin:0 5px;
+        height: 13px;
+        width: 1px;
+      }
+    }
+
+    .sale-price {
+      font-size:20px;
+      line-height:1;
+      font-weight: bold;
+    }
+
+    .sale-unit-price {
+      font-weight:normal;
+    }
+    .origin-price {
+      text-decoration: line-through;
+    }
+
+    .coupon_price {
+      font-weight:bold;
+    }
+
+    .oos-title {
+      &:before {
+        display: inline-block;
+        position: relative;
+        content: '';
+        border-right: 1px solid #ddd;
+        top: 2px;
+        margin:0 5px;
+        height: 13px;
+        width: 1px;
+      }
+    }
+    .soldout &{
+      opacity: 0.7;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+      filter: alpha(opacity=70);
+      -moz-opacity: 0.7;
+      -khtml-opacity: 0.7;
+    }
+
+  }
+
+
+}

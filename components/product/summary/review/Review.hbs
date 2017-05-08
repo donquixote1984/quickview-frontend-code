@@ -1,0 +1,30 @@
+{{#if available}}
+<div class="quick-view-review">
+    <div class="review-stars">
+        <div class="review-stars-percentage" style="width:{{percentageFormat ratingPercentage}}"></div>
+    </div>
+    <a class="review-logs" href="javascript:void(0)">({{commaFormat ratingCount}})</a>
+
+    <a class="quick-view-purchase-sdp" href="{{sdpUrl}}" target="_blank">상품 상세보기 ></a>
+
+    {{! review-list is used for both review list and button}}
+    {{! review-list-container is used for review scroll }}
+    <div class="review-list loading">
+        <div class="review-list-container">
+            <ul>
+                {{#each reviewList}}
+                <li>{{@index}}</li>
+                {{/each}}
+            </ul>
+        </div>
+        <div style="text-align:center;margin-right:10px">
+            <a class="review-go-to-sdp" href="{{sdpUrl}}" target="_blank"><strong>{{commaFormat ratingCount}}개</strong> 상품평 전체보기</a>
+        </div>
+        <a href="javascript:void(0)" class="review-list-close"></a>
+    </div>
+</div>
+    {{else}}
+    <div class="quick-view-review">
+        <a class="quick-view-purchase-sdp" style='float:none;' href="{{sdpUrl}}" target="_blank">상품 상세보기 ></a>
+    </div>
+{{/if}}

@@ -1,0 +1,115 @@
+@import "../../../base/base.scss";
+.quick-view-header-coupondownload {
+  top:-3px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  button {
+    background: #fff;
+    color: #0073e9;
+    border: 1px solid #0073e9;
+    margin-left: 10px;
+    padding: 3px 7px 1px 7px;
+    outline:0 none;
+    position:relative;
+    top:3px;
+    font-family:'돋움', Dotum, sans-serif;
+    &:before {
+      display:inline-block;
+      content:'';
+      background: url($quick-view-asset-sprite) no-repeat -377px -327px;
+      margin-right:3px;
+      width: 9px;
+      height:10px;
+    }
+  }
+  .quick-view-coupon-download-popup {
+    display:none;
+    background:#fff;
+    position:absolute;
+    z-index:4;
+    text-align:center;
+    border:1px solid #ddd;
+    left: -190px;
+    top:33px;
+
+    &:before {
+      display: block;
+      content: '';
+      position: absolute;
+      background-image: url($quick-view-asset-sprite);
+      width: 14px;
+      height: 8px;
+      background-position: -390px -327px;
+      left: 50%;
+      top: -7px;
+    }
+
+    h4 {
+      text-align: left;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ddd;
+      background: url("//imgs.coupangcdn.com/image/dragonstone/sdp/bg_option.png") repeat;
+    }
+  }
+  .quick-view-coupon-download-content {
+    padding: 10px;
+    max-width:490px;
+    ul {
+      font-size:0px;
+      li {
+        font-size:12px;
+        float:left;
+        margin:10px;
+      }
+
+
+      &:after {
+        content:'';
+        display:table;
+        clear:both;
+      }
+    }
+
+    .quick-view-coupon-download-item {
+
+      width: 214px;
+      height: 120px;
+      cursor:pointer;
+      background: url($quick-view-asset-sprite) no-repeat 0 0;
+      &.quick-view-coupon-download-item-on {
+
+      }
+
+      &.quick-view-coupon-download-item-off {
+        background: url($quick-view-asset-sprite) no-repeat 0 -120px;
+        cursor: default;
+      }
+    }
+  }
+
+  .quick-view-coupon-download-price {
+    font-size: 22px;
+    font-weight: bold;
+    padding-top: 20px;
+  }
+  .quick-view-coupon-download-description {
+    color: #aaa;
+  }
+
+  .quick-view-coupon-download-close {
+    position: absolute;
+    top: 10px;
+    right: 8px;
+    display: block;
+    border: 0 none;
+    background: url($quick-view-asset-sprite) no-repeat -328px -327px;
+    width: 15px;
+    height: 15px;
+
+    &:hover {
+      background-position: -346px -327px;
+    }
+  }
+}

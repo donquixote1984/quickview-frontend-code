@@ -1,0 +1,25 @@
+<li>
+    <article>
+        {{!-- 도움이 된 카운트 --}}
+        {{#xif helpfulTrueCount '>' 0}}
+        <div class="review-item-title">
+           {{commaFormat helpfulTrueCount}}명에게 도움이 된 상품평
+        </div>
+        {{/xif}}
+
+        <div class="review-item-header">
+            <span class="review-stars">
+                <span class="review-stars-percentage" style="width:{{percentageFormat rating 5}}"></span>
+            </span>
+
+            <span>{{displayName}}</span>
+            <span>{{reviewAt}}</span>
+        </div>
+        <div class="review-item-name">{{itemName}}</div>
+        <div class="review-item-content">
+                {{content}}
+                <span class="ellipsis">&#133;</span>
+                <span class="fill"></span>
+        </div>
+    </article>
+</li>

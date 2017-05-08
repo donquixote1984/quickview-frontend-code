@@ -1,0 +1,44 @@
+{{#if quickViewList}}
+<div class="quick-view-footer">
+    <button class="quick-nav quick-nav-prev" {{#unless hasPrevPage}}disabled="disabled"{{/unless}}><!--Prev Button--></button>
+
+    <!--
+    Well , the reason that add 2 additional div is:
+    first div set position:relative;
+    second div set overflow:hidden;
+    this makes a title tips popup can be shown by pass of overflow:hidden
+    be ea
+    -->
+    <div class="quick-view-footer-container">
+        <div class="quick-view-footer-wrapper">
+        <ul class="quick-view-footer-list">
+        {{#each quickViewList}}
+            <li class="quick-view-footer-item {{#xif ../selectedIndex '==' @index}}quick-view-footer-selected{{/xif}}" data-index="{{@index}}" data-product-id="{{productId}}">
+                <a href="javascript:void(0)">
+                    <img class="quick-view-footer-item-img" src="{{imageUrl}}" onerror="this.src='http://img1.coupangcdn.com/image/coupang/common/no_img_1000_1000.png'">
+                    <div class="quick-view-footer-item-price">{{salePriceWithTag}}</div>
+                </a>
+
+                <div class="quick-view-footer-item-tips-wrapper">
+                    {{!
+                    first wrapper used for position,
+                    second wrapper used for a down arrow
+                    third wrapper used for text over flow
+                    fourth wrapper used for display full height
+                    }}
+                        <span class="quick-view-footer-item-tips">
+                            <span class="quick-view-footer-item-tips-hidden">
+                                <span class="quick-view-footer-item-tips-ellipsis">
+                                    {{title}}
+                                </span>
+                            </span>
+                        </span>
+                </div>
+            </li>
+        {{/each}}
+        </ul>
+        </div>
+    </div>
+    <button class="quick-nav quick-nav-next" {{#unless hasNextPage}}disabled="disabled"{{/unless}}><!--Next Button--></button>
+</div>
+{{/if}}

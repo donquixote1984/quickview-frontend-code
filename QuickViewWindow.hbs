@@ -1,0 +1,24 @@
+<div class="quickview-window">
+    <header>
+        <component name="./header/Header" data="."></component>
+    </header>
+    <section class="quick-view-main">
+        {{!DO NOT CHANGE THE ORDER : RIGHT FIRST,  THEN LEFT}}
+        <aside class="quick-view-right">
+            <component name="./product/summary/Summary" data="."></component>
+        </aside>
+
+        <aside class="quick-view-left">
+            <component name="./product/detail/Detail" data="." className="quick-view-detail-wrapper"></component>
+            <component name="./product/favorite/Favorite" data="." className="quick-view-favorite-wrapper"></component>
+        </aside>
+
+    </section>
+
+    <footer>
+        <component name="./footer/Footer" data="."></component>
+    </footer>
+
+    <a class="quick-view-close" href="javascript:void(0)"></a>
+    <div class="quick-view-overlay"></div>
+</div>

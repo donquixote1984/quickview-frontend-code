@@ -1,0 +1,73 @@
+.quick-view-summary-info {
+  padding: 14px 0;
+  font-size: 11px;
+
+  .almost-sold-out {
+    margin-bottom:6px;
+  }
+  .delivery-badge {
+    img {
+      width: 56px;
+      height: 14px;
+    }
+
+    margin-bottom:5px;
+  }
+
+  .shipping-fee {
+    &.quick-view-txt-gray {
+      em {
+        color: #888 !important;
+      }
+    }
+  }
+  .pdd {
+    margin:1px 0 6px 0;
+    font-size:13px;
+    .prod-txt-green-2 {
+      font-weight:bold;
+      color:#00891a;
+    }
+    .prod-txt-green-normal {
+      color: #00891a;
+      font-size: 13px;
+    }
+  }
+
+  &.loading {
+    position:relative;
+    .quick-view-summary-wrapper {
+      display:none;
+    }
+    &:before {
+      display: block;
+      content: '';
+      position: relative;
+      left: 0;
+      top: 0;
+      height: 30px;
+      width: 100%;
+    }
+    &:after {
+      position:absolute;
+      display:block;
+      content:'';
+      background: url('http://imgs.coupangcdn.com/image/coupang/product/product-detail-loading.gif') no-repeat;
+      width: 24px;
+      height:24px;
+      left: 50%;
+      top:50%;
+      margin-left: -12px;
+      margin-top:-12px;
+    }
+  }
+  .quick-view-cash-promotion {
+    color:#ae0000;
+    margin-bottom:4px;
+  }
+  &.oos-summary {
+    .quick-view-cash-promotion {
+      color: #888;
+    }
+  }
+}

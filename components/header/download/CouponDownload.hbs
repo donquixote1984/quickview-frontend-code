@@ -1,0 +1,22 @@
+{{#if hasCoupon}}
+    <div style="position:relative;min-width:468px;">
+        <button class="quick-view-download-btn">쿠폰받기</button>
+        <div class="quick-view-coupon-download-popup">
+            <h4>쿠폰받기</h4>
+            <div class="quick-view-coupon-download-content">
+                <ul>
+                    {{#each couponList}}
+                        <li>
+                                <div class="quick-view-coupon-download-item {{#if downloadable}}quick-view-coupon-download-item-on{{else}}quick-view-coupon-download-item-off{{/if}}" data-index="{{@index}}">
+                                <div class="quick-view-coupon-download-price">{{value}}</div>
+                                <div class="quick-view-coupon-download-description">{{description}}</div>
+                            </div>
+                        </li>
+                    {{/each}}
+                </ul>
+            </div>
+
+            <a class="quick-view-coupon-download-close" href="javascript:void(0)"></a>
+        </div>
+    </div>
+{{/if}}

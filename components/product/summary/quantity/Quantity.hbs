@@ -1,0 +1,24 @@
+{{#unless soldOut}}
+<div class="quick-view-quantity-info">
+
+    <div class="quick-view-oos-overlay" {{#unless valid}}style='display:block;'{{/unless}}></div>
+
+    <div class="quick-view-quantity-left">
+
+    <div class="quick-view-quantity-info-form">
+        <input class="quick-view-quantity-info-input" type="text" value="{{#if soldOut}}0{{else}}1{{/if}}" class='' {{#if soldOut}}disabled{{/if}}>
+        <div class="quick-view-quantity-info-control">
+            <button data-control="add" class="quick-view-quantity-btn quick-view-quantity-btn-plus" {{#if soldOut}}disabled{{/if}}></button>
+            <button data-control="minus" class="quick-view-quantity-btn quick-view-quantity-btn-minus" disabled></button>
+         </div>
+
+
+        <div class="quick-view-soldout-tooltip"></div>
+    </div>
+
+    </div>
+
+    <component name="./product/summary/quantity/TotalPrice" data="." className="quick-view-total-price"></component>
+
+</div>
+{{/unless}}

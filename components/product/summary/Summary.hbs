@@ -1,0 +1,20 @@
+<div class="quick-view-summary">
+    {{#if valid}}
+    <section class="quick-view-review-section">
+        <component name="./product/summary/review/Review" data="productReviewArea"></component>
+    </section>
+    <section class="quick-view-option-section">
+        <component name="./product/summary/option/OptionList" data="."></component>
+        <component name="./product/summary/info/Info" data="."></component>
+        <component name="./product/summary/quantity/Quantity" data="."></component>
+    </section>
+
+    <section class="quick-view-purchase-section">
+        <component name="./product/summary/purchase/Purchase" data="."></component>
+    </section>
+    {{else}}
+        <div class="quick-view-invalid-btn">
+            <a href="javascript:void(0)">상품 준비 중</a>
+        </div>
+    {{/if}}
+</div>

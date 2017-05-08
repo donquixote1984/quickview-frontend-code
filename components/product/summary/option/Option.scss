@@ -1,0 +1,128 @@
+@import "../../../../base/base.scss";
+.quick-view-options {
+  border-bottom:1px solid #eee;
+  padding:16px 0;
+}
+.second-option {
+  .quick-view-option-item-container {
+    margin-top:12px;
+  }
+}
+.quick-view-option {
+
+  user-select:none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+
+  .quick-view-option-label {
+      display:inline-block;
+    margin-right: 5px;
+
+    &.single {
+      &:after {
+        display: inline-block;
+        content: ':';
+        margin-left:3px;
+      }
+    }
+  }
+  .quick-view-option-item {
+    position:relative;
+    margin-top: 4px;
+    word-break: break-all;
+    font-size:14px;
+    /** if collapsed , set all down down option as blue border*/
+    &.collapsed {
+      .quick-view-option-dropdown {
+        display:block;
+        border: 1px solid #0073e9;
+        border-top:0 none;
+      }
+
+      &.multiple {
+        .quick-view-selected-option {
+          border:1px solid #0073e9;
+          border-bottom:1px solid #eee;
+          &:after {
+            background-position: -286px -327px;
+          }
+        }
+      }
+
+    }
+
+    .quick-view-option-dropdown {
+      display:none;
+      position: absolute;
+      width: 100%;
+      z-index:2;
+      border: 1px solid #ddd;
+      box-sizing: border-box;
+      border-top: 0 none;
+      background: #fff;
+      max-height: 350px;
+      font-size:14px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      li {
+        padding: 10px;
+        cursor:pointer;
+        border-bottom:1px solid #eee;
+        &:hover {
+          background:#fafafa;
+        }
+        &.selected {
+          .quick-view-option-dropdown-item-title {
+            color:#0073e9 !important;
+          }
+        }
+        &.soldout {
+          .depends-on-soldout {
+            color:#888;
+            opacity:.5;
+            filter:Alpha(opacity=50);
+          }
+        }
+
+        .delivery-badge-global {
+          top:0;
+        }
+      }
+    }
+    &.multiple {
+      cursor:pointer;
+      .quick-view-selected-option {
+        position:relative;
+        border: 1px solid #ddd;
+        padding:10px 25px 10px 10px;
+        white-space:nowrap;
+        text-overflow:ellipsis;
+        overflow:hidden;
+        font-weight:bold;
+        &:after {
+          display: block;
+          position: absolute;
+          content: '';
+          right: 10px;
+          top: 50%;
+          margin-top:-4px;
+          background-image: url($quick-view-asset-sprite);
+          background-repeat: no-repeat;
+          background-position: -286px -339px;
+          width: 14px;
+          height: 8px;
+        }
+      }
+    }
+
+    &.single {
+      display:inline-block;
+      font-weight:bold;
+    }
+
+    .quick-view-option-price {
+      font-size:13px;
+    }
+  }
+}

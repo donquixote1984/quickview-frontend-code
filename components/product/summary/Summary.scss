@@ -1,0 +1,39 @@
+@import "../../../base/base.scss";
+.quick-view-summary {
+  padding:0 12px;
+  height: 100%;
+
+
+  .quick-view-invalid-btn {
+    text-align:center;
+    a {
+      padding: 10px 80px;
+      background: #aaa;
+      display: inline-block;
+      color: #fff;
+      margin-top: 20px;
+    }
+  }
+}
+.quick-view-purchase-sdp {
+
+  display: inline-block;
+  font-size: 11px;
+  border: 1px solid #bbb;
+  text-align: center;
+  color: #0073e9;
+  padding: 2px 4px;
+  float: right;
+  margin-top: -3px;
+
+  &:hover {
+    color:#fff;
+    background: #0073e9;
+    border:1px solid #0073e9;
+  }
+  span {
+    display:inline-block;
+    padding:3px;
+  }
+}
+

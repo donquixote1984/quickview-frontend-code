@@ -1,0 +1,48 @@
+<div class="quick-view-detail">
+
+    {{#if valid}}
+        <div style="text-align:center">
+            <img class="quick-view-representive" src="{{imageUrl}}">
+        </div>
+
+        {{!--if type == image then just show image, else just show content--}}
+
+        <div class="quick-view-detail-content" style="display:none;">
+            <ul>
+                {{#each productContents}}
+                    <li class="{{cssClass}}">
+                        {{#each productContentDetails}}
+                            <div class="{{cssClass}}">
+                                {{#xif detailType '==' 'IMAGE'}}
+                                    <img src="{{content}}">
+                                {{else}}
+                                    {{{content}}}
+                                {{/xif}}
+                            </div>
+                        {{/each}}
+                    </li>
+                {{/each}}
+            </ul>
+            <ul>
+                {{#each detailContents}}
+                    <li class="cssClass">
+                        {{#each vendorItemContentDescriptions}}
+                            <div class="{{cssClass}}">
+                            {{#xif detailType '==' 'IMAGE'}}
+                                <img src="{{content}}">
+                            {{else}}
+                                {{{content}}}
+                            {{/xif}}
+                            </div>
+                        {{/each}}
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+
+    {{else}}
+        <div class="quick-view-not-find"></div>
+    {{/if}}
+
+
+</div>

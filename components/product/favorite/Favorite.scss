@@ -1,0 +1,23 @@
+@import "../../../base/base.scss";
+.quick-view-favorite-wrapper {
+  position:absolute;
+  top:6px;
+  right: 27px;
+}
+.quick-view-favorite {
+  display:block;
+
+  background: url($quick-view-asset-sprite) no-repeat 0 -263px;
+  &.on {
+    background-position: -116px -263px;
+    &:hover {
+      background-position: -116px -263px;
+    }
+  }
+
+  &:hover {
+    background-position:-58px -263px;
+  }
+  width: 54px;
+  height:54px;
+}

@@ -1,0 +1,58 @@
+{{#if valid}}
+<div class="quick-view-summary-info loading {{#if soldOut}}oos-summary{{/if}}">
+
+    <component className="quick-view-cash-promotion" name="./product/summary/cashpromotion/CashPromotion" data="cashPromotionMessage
+" bind/>
+
+    <div class="quick-view-summary-wrapper">
+
+    {{#if soldOut}}
+        <div class="almost-sold-out quick-view-txt-red quick-view-txt-bold">
+            일시품절
+        </div>
+    {{else}}
+        {{#if almostSoldOut}}
+            <div class="almost-sold-out quick-view-txt-red quick-view-txt-bold">
+                매진임박({{inventory}}개)
+            </div>
+        {{/if}}
+    {{/if}}
+
+    {{#if logistics}}
+        <div class="delivery-badge">
+             <span>
+                 <img src="{{deliveryBadgeUrl}}" style="width: auto; height: 14px" alt="">
+             </span>
+        </div>
+    {{/if}}
+    {{#if coupangGlobal}}
+        <div class="delivery-badge">
+            <span class="delivery-badge delivery-badge-global">
+                <img src="{{deliveryBadgeUrl}}" style="width: auto; height: 14px" alt="">
+            </span>
+        </div>
+    {{/if}}
+
+
+    <div data-bind="deliveryFee.shippingFeeMessage" class="shipping-fee {{#if soldOut}}quick-view-txt-gray{{/if}}" >
+    {{{deliveryFee.shippingFeeMessage}}}
+    </div>
+    {{!--if soldout , do not show pdd--}}
+    {{#unless soldOut}}
+    <div data-bind="deliveryDateDescriptions" class="pdd" >
+        {{{deliveryDateDescriptions}}}
+    </div>
+    {{/unless}}
+
+        {{!--this part does not changed by quantity, so do not need to use bind--}}
+    {{#unless logistics}}
+        {{#unless soldOut}}
+        <div class="vendor-name">
+            <span class="prod-vendor__name__txt">판매자: {{vendorName}}</span>
+        </div>
+        {{/unless}}
+    {{/unless}}
+        {{!--end part--}}
+    </div>
+</div>
+{{/if}}
